@@ -5,7 +5,7 @@
 .watch {
   width: 36rem;
   height: 36rem;
-  border: 0px solid blue;
+  border: 1px solid blue;
   border-radius: 50%;
   margin: 0px auto;
   position: relative;;
@@ -24,22 +24,18 @@
 
 .watch__hand--second {
   width: 40%;
-
   background: red;
-  transform: rotate(80deg);
 
 }
 
 .watch__hand--minute {
   width: 48%;
   background: blue;
-  transform: rotate(20deg);
 
 }
 
 .watch__hand--hour {
   background: yellow;
-  transform: rotate(44deg);
   width: 30%;
 }
 .watch__tick {
@@ -146,4 +142,13 @@
 }
 .watch__tick--29 {
   transform: rotate(264deg);
+}
+.cover {
+  width: 32rem;
+  height: 32rem;
+  border: 1px solid blue;
+  border-radius: 50%;
+  margin: calc((36rem / 2) - (32rem / 2)) auto;
+  position: relative;
+  background: white;
 }
