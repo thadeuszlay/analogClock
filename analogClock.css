@@ -1,0 +1,149 @@
+:root {
+  --thick-tick-size: 6px;
+  --thin-tick-size: 2px;
+}
+.watch {
+  width: 36rem;
+  height: 36rem;
+  border: 0px solid blue;
+  border-radius: 50%;
+  margin: 0px auto;
+  position: relative;;
+  padding: 0rem;
+}
+
+.watch__hand {
+  height: 1px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0%;
+
+}
+
+.watch__hand--second {
+  width: 40%;
+
+  background: red;
+  transform: rotate(80deg);
+
+}
+
+.watch__hand--minute {
+  width: 48%;
+  background: blue;
+  transform: rotate(20deg);
+
+}
+
+.watch__hand--hour {
+  background: yellow;
+  transform: rotate(44deg);
+  width: 30%;
+}
+.watch__tick {
+  width: 100%;
+  background: green;
+  position: absolute;
+  transform-origin: 50%;
+}
+.watch__tick--thick {
+  height: var(--thick-tick-size);
+  top: calc(50% - (var(--thick-tick-size)/2));
+}
+.watch__tick--thin {
+  height: var(--thin-tick-size);
+  top: calc(50% - (var(--thin-tick-size)/2));
+  background: black;
+}
+.watch__tick--0 {
+  transform: rotate(90deg);
+}
+.watch__tick--1 {
+  transform: rotate(96deg);
+}
+.watch__tick--2 {
+  transform: rotate(102deg);
+}
+.watch__tick--3 {
+  transform: rotate(108deg);
+}
+.watch__tick--4 {
+  transform: rotate(114deg);
+}
+.watch__tick--5 {
+  transform: rotate(120deg);
+}
+.watch__tick--6 {
+  transform: rotate(126deg);
+}
+.watch__tick--7 {
+  transform: rotate(132deg);
+}
+.watch__tick--8 {
+  transform: rotate(138deg);
+}
+.watch__tick--9 {
+  transform: rotate(144deg);
+}
+.watch__tick--10 {
+  transform: rotate(150deg);
+}
+.watch__tick--11 {
+  transform: rotate(156deg);
+}
+.watch__tick--12 {
+  transform: rotate(162deg);
+}
+.watch__tick--13 {
+  transform: rotate(168deg);
+}
+.watch__tick--14 {
+  transform: rotate(174deg);
+}
+.watch__tick--15 {
+  transform: rotate(180deg);
+}
+.watch__tick--16 {
+  transform: rotate(186deg);
+}
+.watch__tick--17 {
+  transform: rotate(192deg);
+}
+.watch__tick--18 {
+  transform: rotate(198deg);
+}
+.watch__tick--19 {
+  transform: rotate(204deg);
+}
+.watch__tick--20 {
+  transform: rotate(210deg);
+}
+.watch__tick--21 {
+  transform: rotate(216deg);
+}
+.watch__tick--22 {
+  transform: rotate(222deg);
+}
+.watch__tick--23 {
+  transform: rotate(228deg);
+}
+.watch__tick--24 {
+  transform: rotate(234deg);
+}
+.watch__tick--25 {
+  transform: rotate(240deg);
+}
+.watch__tick--26 {
+  transform: rotate(246deg);
+}
+.watch__tick--27 {
+  transform: rotate(252deg);
+}
+.watch__tick--28 {
+  transform: rotate(258deg);
+}
+.watch__tick--29 {
+  transform: rotate(264deg);
+}
