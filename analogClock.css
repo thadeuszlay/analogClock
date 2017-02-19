@@ -1,11 +1,18 @@
 :root {
-  --thick-tick-size: 10px;
-  --thin-tick-size: 2px;
+  --thick-tick-size: 1rem;
+  --thin-tick-size: .5rem;
   --watch-size: 36rem;
   --cover-thin-size: 30rem;
   --cover-thick-size: 33rem;
   --hand-second-color: red;
   --watch-bg-color: white;
+  --cover-ticks-thin-center: calc((var(--watch-size) - var(--cover-thin-size)) / 2);
+  --cover-ticks-thick-center: calc((var(--watch-size) - var(--cover-thick-size)) / 2);
+  --border-width: 0.1rem;
+  --second-circle: 3rem;
+  --hand-height: calc(var(--thin-tick-size) - var(--border-width));
+  --hand-color: black;
+  --hour-circle: var(--hand-height);
 }
 .watch {
   width: var(--watch-size);
@@ -15,15 +22,15 @@
   position: relative;
 }
 .watch__hand {
-  height: 6px;
-  background: black;
+  height: var(--hand-height);
+  background: var(--hand-color);
   position: absolute;
   top: 49.3%;
   left: 50%;
   transform-origin: 0%;
   transition: all 0.1s;
   transition-timing-function: cubic-bezier(0.3,2.9,0.58,0.1);
-  border: 1px solid var(--watch-bg-color);
+  border: var(--border-width) solid var(--watch-bg-color);
 }
 .watch__hand--second {
   width: 40%;
@@ -31,10 +38,10 @@
 }
 .watch__hand--second:after {
   content: '';
-  width: 50px;
-  height: 50px;
-  left: 91%;
-  top: -22px;
+  width: var(--second-circle);
+  height: var(--second-circle);
+  left: 100%;
+  top: calc((var(--second-circle) / -2) + (var(--hand-height) + var(--border-width)) / 2) ;
   border-radius: 50%;
   background: var(--hand-second-color);
   position: absolute;
@@ -47,12 +54,12 @@
 }
 .watch__hand--hour:after {
   content: '';
-  width: 10px;
-  height: 10px;
-  top: -1px;
-  left: -5px;
+  width: var(--hour-circle);
+  height: var(--hour-circle);
+  top: 0;
+  left: calc(var(--hour-circle) / -2);
   border-radius: 50%;
-  background: black;
+  background: var(--hand-color);
   position: absolute;
 }
 .watch__tick {
@@ -70,15 +77,15 @@
 .cover__ticks--thin {
   width: var(--cover-thin-size);
   height: var(--cover-thin-size);
-  top: calc((var(--watch-size) / 2) - (var(--cover-thin-size) / 2));
-  left: calc((var(--watch-size) / 2) - (var(--cover-thin-size) / 2));
+  top: var(--cover-ticks-thin-center);
+  left: var(--cover-ticks-thin-center);
   z-index: 0;
 }
 .cover__ticks--thick {
   width: var(--cover-thick-size);
   height: var(--cover-thick-size);
-  top: calc((var(--watch-size) / 2) - (var(--cover-thick-size) / 2));
-  left: calc((var(--watch-size) / 2) - (var(--cover-thick-size) / 2));
+  top: var(--cover-ticks-thick-center);
+  left: var(--cover-ticks-thick-center);
   z-index: -1;
 }
 .watch__tick--thin {
