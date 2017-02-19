@@ -10,12 +10,10 @@
 .watch {
   width: var(--watch-size);
   height: var(--watch-size);
-  border: 0px solid blue;
   border-radius: 50%;
   margin: 0 auto;
   position: relative;
 }
-
 .watch__hand {
   height: 6px;
   background: black;
@@ -27,7 +25,6 @@
   transition-timing-function: cubic-bezier(0.3,2.9,0.58,0.1);
   border: 1px solid var(--watch-bg-color);
 }
-
 .watch__hand--second {
   width: 40%;
   background: var(--hand-second-color);
@@ -38,16 +35,25 @@
   height: 50px;
   left: 91%;
   top: -22px;
-  border-radius: 30px;
+  border-radius: 50%;
   background: var(--hand-second-color);
   position: absolute;
 }
 .watch__hand--minute {
   width: 48%;
 }
-
 .watch__hand--hour {
   width: 30%;
+}
+.watch__hand--hour:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: -1px;
+  left: -5px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
 }
 .watch__tick {
   width: 100%;

@@ -18,20 +18,16 @@ function updateHands() {
   const nowMinutes = now.getMinutes();
   const nowHours = now.getHours();
 
-  console.log("nowSeconds: ", nowSeconds);
+  const secondsInDegrees = ((nowSeconds / fullCircleForSeconds) *
+    fullCircleDegree) - degreeOffset;
+  const minutesInDegrees = ((nowMinutes / fullCircleForMinutes) *
+    fullCircleDegree) - degreeOffset;
+  const hoursInDegrees = ((nowHours / fullCircleForHours) *
+    fullCircleDegree) - degreeOffset;
 
-  const secondsInDegrees = (nowSeconds / fullCircleForSeconds) *
-    fullCircleDegree;
-  const minutesInDegrees = (nowMinutes / fullCircleForMinutes) *
-    fullCircleDegree;
-  const hoursInDegrees = (nowHours / fullCircleForHours) *
-    fullCircleDegree;
-  console.log("secondsInDegrees: ", secondsInDegrees);
-
-  handSecond.style.transform = `rotate(${secondsInDegrees - degreeOffset}deg)`;
-  handMinute.style.transform = `rotate(${minutesInDegrees - degreeOffset}deg)`;
-  handHour.style.transform = `rotate(${hoursInDegrees - degreeOffset}deg)`;
-
+  handSecond.style.transform = `rotate(${secondsInDegrees}deg)`;
+  handMinute.style.transform = `rotate(${minutesInDegrees}deg)`;
+  handHour.style.transform = `rotate(${hoursInDegrees}deg)`;
 
 }
 
