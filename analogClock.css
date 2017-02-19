@@ -1,57 +1,89 @@
 :root {
-  --thick-tick-size: 6px;
+  --thick-tick-size: 10px;
   --thin-tick-size: 2px;
+  --watch-size: 36rem;
+  --cover-thin-size: 30rem;
+  --cover-thick-size: 33rem;
+  --hand-second-color: red;
+  --watch-bg-color: white;
 }
 .watch {
-  width: 36rem;
-  height: 36rem;
-  border: 1px solid blue;
+  width: var(--watch-size);
+  height: var(--watch-size);
+  border: 0px solid blue;
   border-radius: 50%;
-  margin: 0px auto;
-  position: relative;;
-  padding: 0rem;
+  margin: 0 auto;
+  position: relative;
 }
 
 .watch__hand {
-  height: 1px;
+  height: 6px;
   background: black;
   position: absolute;
-  top: 50%;
+  top: 49.3%;
   left: 50%;
   transform-origin: 0%;
-
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.3,2.9,0.58,0.1);
+  border: 1px solid var(--watch-bg-color);
 }
 
 .watch__hand--second {
   width: 40%;
-  background: red;
-
+  background: var(--hand-second-color);
 }
-
+.watch__hand--second:after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  left: 91%;
+  top: -22px;
+  border-radius: 30px;
+  background: var(--hand-second-color);
+  position: absolute;
+}
 .watch__hand--minute {
   width: 48%;
-  background: blue;
-
 }
 
 .watch__hand--hour {
-  background: yellow;
   width: 30%;
 }
 .watch__tick {
   width: 100%;
-  background: green;
+  background: black;
   position: absolute;
   transform-origin: 50%;
 }
-.watch__tick--thick {
-  height: var(--thick-tick-size);
-  top: calc(50% - (var(--thick-tick-size)/2));
+.cover__ticks {
+  border-radius: 50%;
+  margin: 0 auto;
+  position: absolute;
+  background: var(--watch-bg-color);
+}
+.cover__ticks--thin {
+  width: var(--cover-thin-size);
+  height: var(--cover-thin-size);
+  top: calc((var(--watch-size) / 2) - (var(--cover-thin-size) / 2));
+  left: calc((var(--watch-size) / 2) - (var(--cover-thin-size) / 2));
+  z-index: 0;
+}
+.cover__ticks--thick {
+  width: var(--cover-thick-size);
+  height: var(--cover-thick-size);
+  top: calc((var(--watch-size) / 2) - (var(--cover-thick-size) / 2));
+  left: calc((var(--watch-size) / 2) - (var(--cover-thick-size) / 2));
+  z-index: -1;
 }
 .watch__tick--thin {
   height: var(--thin-tick-size);
   top: calc(50% - (var(--thin-tick-size)/2));
-  background: black;
+  z-index: -1;
+}
+.watch__tick--thick {
+  height: var(--thick-tick-size);
+  top: calc(50% - (var(--thick-tick-size)/2));
+  z-index: 0;
 }
 .watch__tick--0 {
   transform: rotate(90deg);
@@ -142,13 +174,4 @@
 }
 .watch__tick--29 {
   transform: rotate(264deg);
-}
-.cover {
-  width: 32rem;
-  height: 32rem;
-  border: 1px solid blue;
-  border-radius: 50%;
-  margin: calc((36rem / 2) - (32rem / 2)) auto;
-  position: relative;
-  background: white;
 }
