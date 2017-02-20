@@ -1,9 +1,9 @@
 :root {
   --thick-tick-size: 1rem;
-  --thin-tick-size: .5rem;
+  --thin-tick-size: 0.5rem;
   --watch-size: 36rem;
-  --cover-thin-size: 30rem;
-  --cover-thick-size: 33rem;
+  --cover-thin-size: calc(var(--watch-size) - 6rem);
+  --cover-thick-size: calc(var(--watch-size) - 3rem);
   --hand-second-color: red;
   --watch-bg-color: white;
   --cover-ticks-thin-center: calc((var(--watch-size) - var(--cover-thin-size)) / 2);
