@@ -1,40 +1,55 @@
 "use strict";
-
 const fullCircleDegree = 360;
-const fullCircleForSeconds = 60;
-const fullCircleForMinutes = 60;
-const fullCircleForHours = 12;
 const degreeOffset = 90;
 
-const handSecond = document.querySelector(".watch__hand--second");
-const handMinute = document.querySelector(".watch__hand--minute");
-const handHour = document.querySelector(".watch__hand--hour");
+const HAND = {
+  SECOND: document.querySelector(".watch__hand--second"),
+  MINUTE: document.querySelector(".watch__hand--minute"),
+  HOUR: document.querySelector(".watch__hand--hour")
+}
 
-let now = null;
-let nowSeconds = null;
-let nowMinutes = null;
-let nowHours = null;
+const FULL_CIRCLE_FOR = {
+  SECOND: 60,
+  MINUTE: 60,
+  HOUR: 12
+}
 
-let secondsInDegrees = null;
-let minutesInDegrees = null;
-let hoursInDegrees = null;
+function convertTimeUnitToDegrees(timeUnits, timeUnitsForFullCircle) {
+  return ((timeUnits / timeUnitsForFullCircle) * fullCircleDegree) -
+    degreeOffset;
+}
+
+function getRotationValue(degrees) {
+  return `rotate(${degrees}deg)`;
+}
+
+function getCurrentTime() {
+  const currentTime = new Date();
+  return {
+    second: currentTime.getSeconds(),
+    minute: currentTime.getMinutes(),
+    hour: currentTime.getHours()
+  };
+}
+
+function convertTimeToDegrees(time) {
+  return {
+    second: convertTimeUnitToDegrees(time.second, FULL_CIRCLE_FOR.SECOND),
+    minute: convertTimeUnitToDegrees(time.minute, FULL_CIRCLE_FOR.MINUTE),
+    hour: convertTimeUnitToDegrees(time.hour, FULL_CIRCLE_FOR.HOUR)
+  };
+}
+
+function updateHandPosition(degrees) {
+  HAND.SECOND.style.transform = getRotationValue(degrees.second);
+  HAND.MINUTE.style.transform = getRotationValue(degrees.minute);
+  HAND.HOUR.style.transform = getRotationValue(degrees.hour);
+}
 
 function updateHands() {
-  now = new Date();
-  nowSeconds = now.getSeconds();
-  nowMinutes = now.getMinutes();
-  nowHours = now.getHours();
-
-  secondsInDegrees = ((nowSeconds / fullCircleForSeconds) * fullCircleDegree) -
-    degreeOffset;
-  minutesInDegrees = ((nowMinutes / fullCircleForMinutes) * fullCircleDegree) -
-    degreeOffset;
-  hoursInDegrees = ((nowHours / fullCircleForHours) * fullCircleDegree) -
-    degreeOffset;
-
-  handSecond.style.transform = `rotate(${secondsInDegrees}deg)`;
-  handMinute.style.transform = `rotate(${minutesInDegrees}deg)`;
-  handHour.style.transform = `rotate(${hoursInDegrees}deg)`;
+  const now = getCurrentTime();
+  const timeInDegrees = convertTimeToDegrees(now);
+  updateHandPosition(timeInDegrees);
 }
 
 setInterval(updateHands, 1000);
