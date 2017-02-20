@@ -1,18 +1,17 @@
 "use strict";
+
 const fullCircleDegree = 360;
 const degreeOffset = 90;
-
-const HAND = {
-  SECOND: document.querySelector(".watch__hand--second"),
-  MINUTE: document.querySelector(".watch__hand--minute"),
-  HOUR: document.querySelector(".watch__hand--hour")
-}
-
 const FULL_CIRCLE_FOR = {
   SECOND: 60,
   MINUTE: 60,
   HOUR: 12
-}
+};
+const HAND = {
+  SECOND: document.querySelector(".watch__hand--second"),
+  MINUTE: document.querySelector(".watch__hand--minute"),
+  HOUR: document.querySelector(".watch__hand--hour")
+};
 
 function convertTimeUnitToDegrees(timeUnits, timeUnitsForFullCircle) {
   return ((timeUnits / timeUnitsForFullCircle) * fullCircleDegree) -
