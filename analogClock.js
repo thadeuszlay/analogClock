@@ -1,5 +1,7 @@
-"use strict";
+(function() {
+ "use strict";
 
+ const oneSecond = 1000;
 const fullCircleDegree = 360;
 const degreeOffset = 90;
 const FULL_CIRCLE_FOR = {
@@ -51,4 +53,5 @@ function updateHands() {
   updateHandPosition(timeInDegrees);
 }
 
-setInterval(updateHands, 1000);
+setInterval(updateHands, oneSecond);
+})();
