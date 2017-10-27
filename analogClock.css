@@ -36,7 +36,7 @@
   width: 40%;
   background: var(--hand-second-color);
 }
-.watch__hand--second:after {
+.watch__hand--second::after {
   content: '';
   width: var(--second-circle);
   height: var(--second-circle);
@@ -52,7 +52,7 @@
 .watch__hand--hour {
   width: 30%;
 }
-.watch__hand--hour:after {
+.watch__hand--hour::after {
   content: '';
   width: var(--hour-circle);
   height: var(--hour-circle);
