@@ -3,7 +3,7 @@
 
  const everySeconds = 1000;
 const fullCircleDegree = 360;
-const degreeOffset = 90;
+
 const FULL_CIRCLE_FOR = {
   SECOND: 60,
   MINUTE: 60,
@@ -16,6 +16,7 @@ const HAND = {
 };
 
 function convertTimeUnitToDegrees(timeUnits, timeUnitsForFullCircle) {
+  const degreeOffset = 90;
   return ((timeUnits / timeUnitsForFullCircle) * fullCircleDegree) -
     degreeOffset;
 }
