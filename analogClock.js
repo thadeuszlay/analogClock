@@ -53,6 +53,6 @@ function updateHands() {
   const timeInDegrees = convertTimeToDegrees(now);
   updateHandPosition(timeInDegrees);
 }
-
+updateHands();
 setInterval(updateHands, everySeconds);
 })();
