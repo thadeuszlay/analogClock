@@ -82,8 +82,8 @@
   z-index: 0;
 }
 .watch__cover--thick {
-  width: var(--watch__cover-size);
-  height: var(--watch__cover-size);
+  width: var(--watch__cover-thick-size);
+  height: var(--watch__cover-thick-size);
   top: var(--watch__cover-thick-center);
   left: var(--watch__cover-thick-center);
   z-index: -1;
