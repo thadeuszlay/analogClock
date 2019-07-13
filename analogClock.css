@@ -75,17 +75,17 @@
   background: var(--watch-bg-color);
 }
 .watch__cover--thin {
-  width: var(--cover-thin-size);
-  height: var(--cover-thin-size);
-  top: var(--cover-ticks-thin-center);
-  left: var(--cover-ticks-thin-center);
+  width: var(--watch__cover-thin-size);
+  height: var(--watch__cover-thin-size);
+  top: var(--watch__cover-thin-center);
+  left: var(--watch__cover-thin-center);
   z-index: 0;
 }
 .watch__cover--thick {
   width: var(--cover-thick-size);
   height: var(--cover-thick-size);
-  top: var(--cover-ticks-thick-center);
-  left: var(--cover-ticks-thick-center);
+  top: var(--watch__cover-thick-center);
+  left: var(--watch__cover-thick-center);
   z-index: -1;
 }
 .watch__tick--thin {
