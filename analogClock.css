@@ -2,12 +2,12 @@
   --thick-tick-size: 1rem;
   --thin-tick-size: 0.5rem;
   --watch-size: 36rem;
-  --cover-thin-size: calc(var(--watch-size) - 6rem);
-  --cover-thick-size: calc(var(--watch-size) - 3rem);
+  --watch__cover-thin-size: calc(var(--watch-size) - 6rem);
+  --watch__cover-thick-size: calc(var(--watch-size) - 3rem);
   --hand-second-color: red;
   --watch-bg-color: white;
-  --cover-ticks-thin-center: calc((var(--watch-size) - var(--cover-thin-size)) / 2);
-  --cover-ticks-thick-center: calc((var(--watch-size) - var(--cover-thick-size)) / 2);
+  --watch__cover-thin-center: calc((var(--watch-size) - var(--watch__cover-thin-size)) / 2);
+  --cover-ticks-thick-center: calc((var(--watch-size) - var(--watch__cover-thick-size)) / 2);
   --border-width: 0.1rem;
   --second-circle: 3rem;
   --hand-height: calc(var(--thin-tick-size) - var(--border-width));
@@ -68,20 +68,20 @@
   position: absolute;
   transform-origin: 50%;
 }
-.cover__ticks {
+.watch__cover {
   border-radius: 50%;
   margin: 0 auto;
   position: absolute;
   background: var(--watch-bg-color);
 }
-.cover__ticks--thin {
+.watch__cover--thin {
   width: var(--cover-thin-size);
   height: var(--cover-thin-size);
   top: var(--cover-ticks-thin-center);
   left: var(--cover-ticks-thin-center);
   z-index: 0;
 }
-.cover__ticks--thick {
+.watch__cover--thick {
   width: var(--cover-thick-size);
   height: var(--cover-thick-size);
   top: var(--cover-ticks-thick-center);
